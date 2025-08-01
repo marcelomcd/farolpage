@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.sqlite3
+*.env
+*.venv
+.env/
+.venv/
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Dash/Streamlit/Dashboards
+*.log
+*.DS_Store
+*.db
+.cache/
+.pytest_cache/
+.mypy_cache/
+__dash__/
+
+# VS Code
+.vscode/
+.code-workspace
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dll
+*.dylib
+
+# Test output
+coverage.xml
+htmlcov/
+coverage/
+*.cover
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Backup files
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# Projetos específicos
+/exportações/
+/exportados/
+*.xlsx
+*.pdf
+*.zip
+*~  # arquivos temporários com ~

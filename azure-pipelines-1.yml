@@ -1,0 +1,32 @@
+variables:
+  remote_path: "/home/ubuntu/link-connect-qa"
+  s3_bucket: "link-connect-qa-deploy"
+  s3_key: "deploy-package.tar.gz"
+  region: "us-east-1"
+  ssm_instance_id: "i-0f6312684d58b4611"
+
+steps:
+
+- task: Bash@3
+  displayName: 'Compactar tudo da raiz do projeto'
+  inputs:
+    targetType: 'inline'
+    script: |
+      set -e  # Encerra se der erro
+      cd $(Build.SourcesDirectory)
+
+      echo "Arquivos na raiz do projeto:"
+      ls -lah
+
+      echo "Compactando tudo (exceto .git e deploy-package.tar.gz)..."
+      tar --exclude='./.git' --exclude='./deploy-package.tar.gz' -czf ../deploy-package.tar.gz .
+      mv ../deploy-package.tar.gz ./deploy-package.tar.gz
+
+      echo "Arquivo gerado:"
+      ls -lh deploy-package.tar.gz
+- task: PublishBuildArtifacts@1
+  displayName: 'Publicar artefato para Release'
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/deploy-package.tar.gz'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
