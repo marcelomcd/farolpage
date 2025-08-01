@@ -1,0 +1,84 @@
+/* =======================================
+   Custom Stylesheet
+   Autor: Marcelo Macedo (Farol Operacional)
+   Descrição: CSS base para layout e tema
+   ======================================= */
+
+.theme-dark {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+.theme-light {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.theme-dark .card {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+}
+
+.theme-light .card {
+    background-color: #f8f9fa !important;
+    color: #000000 !important;
+}
+
+.theme-dark .table {
+    background-color: #1e1e1e !important;
+    color: #fff !important;
+}
+
+.theme-light .table {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+input,
+.form-control {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+.card-farol .farol-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.card-farol .farol-bolinha {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.card-farol {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    color: var(--farol-text-color);
+}
+
+.card-farol:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .nav-link {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.navbar .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
